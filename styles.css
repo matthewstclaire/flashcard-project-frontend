@@ -1,12 +1,13 @@
 
 html,body {
+    font-family: 'Indie Flower', cursive;
     background-color: #FFE4E1  }
 
-    .parent {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
