@@ -3,7 +3,7 @@ html,body {
     font-family: 'Indie Flower', cursive;
     background-color: #FFE4E1  }
 
-.parent {
+.heading {
     display: flex;
     justify-content: center;
     align-items: center;
