@@ -8,18 +8,20 @@ class API {
                 const body = question.body;
                 const answer = question.answer;
                 new Question(id, body, answer)
-
-            }) 
-            postQuestion(question)
-            
+            })
         })
-    }
-    
-    function postQuestion(question){
-        return `
-        <div>
-        <h2>${question.body}</h2>
-        <h2>${question.answer}</h2>
-        </div>`
-    }
+
+   
+
+
+
+
+
+// function addPoststoPage(posts){
+//     posts.forEach(function(post){
+//       // need to create the post in here, attach it to the page
+//       attachPost(postHtml(post))
+//     })
+//   }
+
 }

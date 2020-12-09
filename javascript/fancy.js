@@ -1,3 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
     API.addQuestions()
 })
+
+// function disableClick() {
+//     // Disable the button
+//     document.getElementById("checkbox1").disabled = true;
+  
+//     // Do your processing here
+//     alert("You can only click one category!");
+  
+//     // Re-enable after processing if you want
+// }
