@@ -10,18 +10,5 @@ class API {
                 new Question(id, body, answer)
             })
         })
-
-   
-
-
-
-
-
-// function addPoststoPage(posts){
-//     posts.forEach(function(post){
-//       // need to create the post in here, attach it to the page
-//       attachPost(postHtml(post))
-//     })
-//   }
-
+    }
 }

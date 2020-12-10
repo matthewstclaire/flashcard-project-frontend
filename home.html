@@ -17,23 +17,24 @@
         <h1>Flashcards</h1>
     </div>
 <br>
-<br>
-    <class="card">
-        <div class="container">
-          <h4><b>Choose a Category</b></h4>
-          <button data-id="1" type="button">Addition</button>
-          <button data-id="2" type="button">Subtraction</button>
-          <button data-id="3" type="button">Multiplication</button>
-          <button data-id="4" type="button">Division</button>
+<h4><b>Choose a Category<b></h4>
+        <div class="container1">
+          
+          <br>
+          <button type="button" class="btn btn-success">Addition</button>
+          <button type="button" class="btn btn-info">Subtraction</button>
+          <button type="button" class="btn btn-warning">Multiplication</button>
+          <button type="button" class="btn btn-danger">Division</button>
         </div>
-      </class=>
+      </class=><br>
 <div>
-<br>
-<br>
+
+<div id="answer-list"></div>
+
 <br>
 <br>
 
-      <form id="submit-question" action="#">
+      <!-- <form id="submit-question" action="#">
         <h2>Submit a New Question</h2>
         <input type="checkbox" name="addition" value="addition" id="checkbox1"> Addition
         <input type="checkbox" name="subtraction" value="subtraction"> Subtraction
@@ -52,7 +53,46 @@
 
         <input type="submit" value="Create Question" class="btn">
       </form>
-    </div>
+    </div> -->
+<h2>Create a Question</h2>
+
+<div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios" id="addition-button" value="option1" checked="">
+      Addition
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios" id="subtraction-button" value="option2">
+      Subtraction
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios" id="multiplication-button" value="option2">
+      Multiplication
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="optionsRadios" id="division-button" value="option2">
+      Division
+    </label>
+  </div>
+
+        <div class="input-field">
+            <input type="text" name="question" id="question">
+            <label for="question">Question</label>
+          </div>
+  
+          <div class="input-field">
+            <input type="text" name="answer" id="answer">
+            <label for="answer">Answer</label>
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
 
 </body>
 
