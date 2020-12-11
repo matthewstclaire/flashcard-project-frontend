@@ -26,17 +26,17 @@ renderQuestion() {
     <hr class="my-4">
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button">Answer</button>
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="next_question_button">Next Question</button>
-    <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button">Delete Question</button>
+    <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button" class="delete">Delete Question</button>
     <div id="placeholder_answer"></div>
     </div>
         `
         }
 
     addAnswer(e){
-    const node = document.createElement("H11");                 // Create a <li> node
-    const textnode = document.createTextNode(`${this.answer}`);         // Create a text node
-    node.appendChild(textnode);                              // Append the text to <li>
-    document.getElementById("placeholder_answer").appendChild(node);     // Append <li> to <ul> with id="myList"
+    const node = document.createElement("H11");
+    const textnode = document.createTextNode(`${this.answer}`);
+    node.appendChild(textnode);
+    document.getElementById("placeholder_answer").appendChild(node);
         }
 
     // questionSubmission(){
@@ -47,25 +47,9 @@ renderQuestion() {
     //         });
     //     }    
 
+//     deleteQuestion(e){
+//         const id = 
+
+//     }
+
    }
-
-
-
-
-
-
-    // document.getElementById("answer_button).addEventListener('click', function(e) {
-    //     const showAnswer = document.getElementsByClassName('placeholder_answer');
-    //     showAnswer.appendChild()
-
-
-
-
-    // 
-    // });
-
-
-
-        
-        // <h2 class="question">${this.body}</h2>
-        // <h3 class="answer">${this.answer}</h3>

@@ -12,34 +12,34 @@ class API {
         })
     }
 
-    static createQuestion(e){
-       if (e.target.checked === true){
+    // static createQuestion(e){
+    //    if (e.target.checked === true){
               
 
-       } else if {
+    //    } else if {
 
 
-       } else if {
+    //    } else if {
 
 
-       } else {
+    //    } else {
 
 
-       }
-        e.preventDefault()
-        let data = {
-            'body': e.target.question.value,
-            'answer': e.target.answer.value
-        }
+    //    }
+    //     e.preventDefault()
+    //     let data = {
+    //         'body': e.target.question.value,
+    //         'answer': e.target.answer.value
+    //     }
 
-    fetch('http://localhost:3000/categories/${}', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-        })
-    }
+    // fetch('http://localhost:3000/categories/${}', {
+    //     method: 'POST',
+    //     headers: {
+    //     'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    //     })
+    // }
 }
 
 //js conditional if e.target.checked === true
