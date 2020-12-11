@@ -11,4 +11,21 @@ class API {
             })
         })
     }
+
+    static createQuestion(e){
+       
+        e.preventDefault()
+        let data = {
+            'body': e.target.question.value,
+            'answer': e.target.answer.value
+        }
+
+    fetch('http://localhost:3000/questions', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        })
+    }
 }

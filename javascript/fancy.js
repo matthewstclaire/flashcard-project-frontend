@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     API.addQuestions()
+    document.getElementById('questionForm').addEventListener('submit', API.createQuestion)
 })
 
 // function disableClick() {
