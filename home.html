@@ -11,12 +11,56 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
     
-    
+
 <body>
     <div class="heading">
         <h1>Flashcards</h1>
     </div>
 <br>
+<h2>Create a Question</h2>
+
+<div id="questionForm" class="align_right">
+    <form>
+<div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="add_btn" id="addition-button" value="1" checked="">
+      Addition
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="sub_btn" id="subtraction-button" value="2">
+      Subtraction
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="mult_btn" id="multiplication-button" value="3">
+      Multiplication
+    </label>
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="radio" class="form-check-input" name="div_btn" id="division-button" value="4">
+      Division
+    </label>
+  </div>
+
+        <div class="input-field">
+            <input type="text" name="question" id="question">
+            <label for="question">Question</label>
+          </div>
+  
+          <div class="input-field">
+            <input type="text" name="answer" id="answer">
+            <label for="answer">Answer</label>
+          </div>
+  
+          <input type="submit" value="Submit Question">
+        </form>
+    </div>
+
+<div class="center_right">
 <h4><b>Choose a Category<b></h4>
         <div class="container1">
           
@@ -25,11 +69,10 @@
           <button type="button" class="btn btn-info">Subtraction</button>
           <button type="button" class="btn btn-warning">Multiplication</button>
           <button type="button" class="btn btn-danger">Division</button>
-        </div>
-      </class=><br>
-<div>
+        </div><br>
+    </div>
 
-<div id="answer-list"></div>
+<div id="answer-list" class="align_left"></div>
 
 <br>
 <br>
@@ -54,47 +97,7 @@
         <input type="submit" value="Create Question" class="btn">
       </form>
     </div> -->
-<h2>Create a Question</h2>
 
-<div id="questionForm">
-<div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="addition-button" value="option1" checked="">
-      Addition
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="subtraction-button" value="option2">
-      Subtraction
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="multiplication-button" value="option2">
-      Multiplication
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="division-button" value="option2">
-      Division
-    </label>
-  </div>
-
-        <div class="input-field">
-            <input type="text" name="question" id="question">
-            <label for="question">Question</label>
-          </div>
-  
-          <div class="input-field">
-            <input type="text" name="answer" id="answer">
-            <label for="answer">Answer</label>
-          </div>
-  
-          <input type="submit" value="Submit Question">
-        </form>
-    </div>
 </body>
 
 </html>

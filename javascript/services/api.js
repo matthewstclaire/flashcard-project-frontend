@@ -13,14 +13,26 @@ class API {
     }
 
     static createQuestion(e){
-       
+       if (e.target.checked === true){
+              
+
+       } else if {
+
+
+       } else if {
+
+
+       } else {
+
+
+       }
         e.preventDefault()
         let data = {
             'body': e.target.question.value,
             'answer': e.target.answer.value
         }
 
-    fetch('http://localhost:3000/questions', {
+    fetch('http://localhost:3000/categories/${}', {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
@@ -29,3 +41,7 @@ class API {
         })
     }
 }
+
+//js conditional if e.target.checked === true
+//let category = addition
+//strong params in category for body answer
