@@ -11,7 +11,7 @@ renderQuestion() {
     const questionContainer = document.createElement('div')
     questionContainer.dataset.id = this.id
     questionContainer.id = this.id
-    questionContainer.classList.add = "question-show"
+    questionContainer.classList.add = "questionShow"
     questionContainer.innerHTML += this.questionHTML()
     questionHolder.appendChild(questionContainer)
     questionContainer.addEventListener('click', (e) => {
@@ -23,7 +23,6 @@ renderQuestion() {
     questionHTML(){
     return `
     <div class="jumbotron">
-
     <h11 class="display-3">${this.body}</h11>
     <hr class="my-4">
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button">Answer</button>
@@ -38,18 +37,19 @@ renderQuestion() {
     const node = document.createElement("H11");
     const textnode = document.createTextNode(`${this.answer}`);
     node.appendChild(textnode);
-    document.getElementById("placeholderAnswer").appendChild(node);
+    document.getElementById('answerList').appendChild(node);
         }
 
     deleteQuestion(e){
+        
         const id = parseInt(e.target.parentElement.id)
+        
         fetch(`http://localhost:3000/questions/${id}`,{ 
-        method: 'DELETE',
-        headers:
-        'Content-Type': 'application/json'
-    })
+        method: 'DELETE'
+            })
+            
         .then(() => {
             document.getElementById("answerList").removeChild(document.getElementById(id))
-        })
-    }
+            })
+        }
 }
