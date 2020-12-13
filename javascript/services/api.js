@@ -12,13 +12,14 @@ class API {
         })
     }
 
+    
     static createQuestion(e){
        
         e.preventDefault()
         let data = {
-            'topic': e.target.category.value,
-            'question_attributes': [{
-                'body': e.target.question.value,
+            'topic': e.target.topic.value,
+            'questions_attributes': [{
+                'body': e.target.body.value,
                 'answer': e.target.answer.value
                 }]
         }
