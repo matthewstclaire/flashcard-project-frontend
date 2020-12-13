@@ -12,35 +12,26 @@ class API {
         })
     }
 
-    // static createQuestion(e){
-    //    if (e.target.checked === true){
-              
-
-    //    } else if {
-
-
-    //    } else if {
-
-
-    //    } else {
-
-
-    //    }
-    //     e.preventDefault()
-    //     let data = {
-    //         'body': e.target.question.value,
-    //         'answer': e.target.answer.value
-    //     }
-
-    // fetch('http://localhost:3000/categories/${}', {
-    //     method: 'POST',
-    //     headers: {
-    //     'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(data)
-    //     })
-    // }
-}
+    static createQuestion(e){
+       
+        e.preventDefault()
+        let data = {
+            'topic': e.target.category.value,
+            'question_attributes': [{
+                'body': e.target.question.value,
+                'answer': e.target.answer.value
+                }]
+        }
+debugger
+    fetch('http://localhost:3000/categories/${this.id}', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        })
+    }
+    }
 
 //js conditional if e.target.checked === true
 //let category = addition

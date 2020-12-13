@@ -7,7 +7,7 @@ class Question{
     }
 
 renderQuestion() {
-    const questionHolder = document.getElementById("answer-list")
+    const questionHolder = document.getElementById("answerList")
     const questionContainer = document.createElement('div')
     questionContainer.dataset.id = this.id
     questionContainer.id = this.id
@@ -16,18 +16,20 @@ renderQuestion() {
     questionHolder.appendChild(questionContainer)
     questionContainer.addEventListener('click', (e) => {
         if (e.target.id==="answer_button") this.addAnswer(e)
+        if (e.target.id==="delete_button") this.deleteQuestion(e)
         });
     }
 
     questionHTML(){
     return `
     <div class="jumbotron">
+
     <h11 class="display-3">${this.body}</h11>
     <hr class="my-4">
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button">Answer</button>
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="next_question_button">Next Question</button>
     <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button" class="delete">Delete Question</button>
-    <div id="placeholder_answer"></div>
+    <div id="placeholderAnswer"></div>
     </div>
         `
         }
@@ -36,20 +38,18 @@ renderQuestion() {
     const node = document.createElement("H11");
     const textnode = document.createTextNode(`${this.answer}`);
     node.appendChild(textnode);
-    document.getElementById("placeholder_answer").appendChild(node);
+    document.getElementById("placeholderAnswer").appendChild(node);
         }
 
-    // questionSubmission(){
-    //     const formAdd = document.getElementById('questionForm');   
-    //     formAdd.addEventListener("submit",  => {
-    //         debugger
-            
-    //         });
-    //     }    
-
-//     deleteQuestion(e){
-//         const id = 
-
-//     }
-
-   }
+    deleteQuestion(e){
+        const id = parseInt(e.target.parentElement.id)
+        fetch(`http://localhost:3000/questions/${id}`,{ 
+        method: 'DELETE',
+        headers:
+        'Content-Type': 'application/json'
+    })
+        .then(() => {
+            document.getElementById("answerList").removeChild(document.getElementById(id))
+        })
+    }
+}

@@ -21,30 +21,13 @@
 
 <div id="questionForm" class="align_right">
     <form>
-<div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="addition-button" value="1">
-     Addition
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="subtraction-button" value="2">
-      Subtraction
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="multiplication-button" value="3">
-      Multiplication
-    </label>
-  </div>
-  <div class="form-check">
-    <label class="form-check-label">
-      <input type="radio" class="form-check-input" name="optionsRadios" id="division-button" value="4">
-      Division
-    </label>
-  </div>
+        <label for="newQuestion" name="category" value="category">Category:</label>
+        <select id="categories">
+          <option value="addition" id='1'>Addition</option>
+          <option value="subtraction" id='2'>Subtraction</option>
+          <option value="multiplication" id='3'>Multiplication</option>
+          <option value="division" id='4'>Division</option>
+        </select>
 
         <div class="input-field">
             <input type="text" name="question" id="question">
@@ -72,7 +55,7 @@
         </div><br>
     </div>
 
-<div id="answer-list" class="align_left"></div>
+<div id="answerList" class="align_left"></div>
 
 <br>
 <br>
