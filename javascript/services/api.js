@@ -12,19 +12,18 @@ class API {
         })
     }
 
-    
+
     static createQuestion(e){
-       
         e.preventDefault()
         let data = {
             'topic': e.target.topic.value,
             'questions_attributes': [{
                 'body': e.target.body.value,
-                'answer': e.target.answer.value
+                'answer': e.target.answer.value     
                 }]
         }
-debugger
-    fetch('http://localhost:3000/categories/${this.id}', {
+       
+    fetch("http://localhost:3000/categories", {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'

@@ -47,7 +47,7 @@ class Question{
 
     deleteQuestion(e){
         const id = parseInt(e.target.parentElement.id)
-        fetch(`http://localhost:3000/questions/${id}`,{ 
+        fetch(`http://localhost:3000/questions`,{ 
         method: 'DELETE'
             })
         .then(() => {
