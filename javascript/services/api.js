@@ -1,4 +1,15 @@
 class API {
+    static findCategories() {
+    fetch("http://localhost:3000/categories")
+    .then(resp => resp.json())
+    .then(categories => {
+        categories.forEach(category => {
+            const {id, topic, questions} = category
+            new Category(id, topic, questions)
+    })
+})
+}
+
     static addQuestions(){
         fetch("http://localhost:3000/questions")
         .then(resp=>resp.json())
@@ -12,7 +23,6 @@ class API {
         })
     }
 
-
     static createQuestion(e){
         e.preventDefault()
         let data = {
@@ -21,8 +31,7 @@ class API {
                 'body': e.target.body.value,
                 'answer': e.target.answer.value     
                 }]
-        }
-       
+        }  
     fetch("http://localhost:3000/categories", {
         method: 'POST',
         headers: {

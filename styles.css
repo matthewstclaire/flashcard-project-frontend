@@ -383,6 +383,10 @@ align_right{
    line-height: 1.2;
  }
  
+.center {
+  align-items: center;
+}
+
  h1, .h1 {
    font-size: 3.0rem;
    display: flex;

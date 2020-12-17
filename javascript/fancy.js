@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
     API.addQuestions()
+    API.findCategories()
     document.getElementById('questionForm').addEventListener('submit', API.createQuestion)
 })
 

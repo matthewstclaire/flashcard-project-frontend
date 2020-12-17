@@ -6,8 +6,6 @@ class Question{
         this.renderQuestion()
     }
 
-
-
     renderQuestion() {
         const questionHolder = document.getElementById("answerList")
         const questionContainer = document.createElement('div')
@@ -20,20 +18,25 @@ class Question{
         // debugger
         questionHolder.appendChild(questionContainer)
         // debugger
-        questionContainer.addEventListener('click', (e) => {
-            if (e.target.id==="answer_button") this.addAnswer(e)
-            if (e.target.id==="delete_button") this.deleteQuestion(e)
-            });
+        document.getElementById(`answer_button-${this.id}`).addEventListener('click', e => {
+            this.addAnswer(e)
+        })
+        document.getElementById('delete_button').addEventListener('click', e => {
+            this.deleteQuestion(e)
+        })
+        // questionContainer.addEventListener('click', (e) => {
+        //     if (e.target.id==="answer_button") this.addAnswer(e)
+        //     if (e.target.id==="delete_button") this.deleteQuestion(e)
+        //     });
         }
 
     questionHTML(){
         return `
-        <h11 class="display-3">${this.body}</h11>
-        <hr class="my-4">
-        <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button">Answer</button>
-        <button type ="button" class="btn btn-primary btn-lg" role="button" id="next_question_button">Next Question</button>
+        <div class = jumbotron>
+        <h11>${this.body}</h11>
+        <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button-${this.id}">Answer</button>
         <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button" class="delete">Delete Question</button>
-        <div id="placeholderAnswer"></div>
+        <div id="placeholderAnswer${this.id}"></div>
         </div>
             `
     }
@@ -42,7 +45,7 @@ class Question{
         const node = document.createElement("H11");
         const textnode = document.createTextNode(`${this.answer}`);
         node.appendChild(textnode);
-        document.getElementById('placeholderAnswer').appendChild(node);
+        document.getElementById(`placeholderAnswer${this.id}`).appendChild(node);
         }
 
     deleteQuestion(e){

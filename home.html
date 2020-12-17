@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="javascript/services/api.js"></script>
-    <script src="javascript/models/question.js"></script>
-    <script src="javascript/fancy.js"></script>
+    
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    
-
 <body>
     <div class="heading">
         <h1>Flashcards</h1>
@@ -43,44 +39,27 @@
         </form>
     </div>
 
-<div class="center_right">
-<h4><b>Choose a Category<b></h4>
-        <div class="container1">
-          
-          <br>
-          <button type="button" class="btn btn-success">Addition</button>
-          <button type="button" class="btn btn-info">Subtraction</button>
-          <button type="button" class="btn btn-warning">Multiplication</button>
-          <button type="button" class="btn btn-danger">Division</button>
-        </div><br>
-    </div>
+    <h4><b>Choose a Category<b></h4>
+      <div id="category-container" class="container1">
+        <br>
+        <button type="button" id="Addition" class="btn btn-success">Addition</button>
+        <button type="button" id="Subraction" class="btn btn-info">Subtraction</button>
+        <button type="button" id="Multiplication" class="btn btn-warning">Multiplication</button>
+        <button type="button" id="Division" class="btn btn-danger">Division</button>
+      </div><br>
+  </div>
 
 <div id="answerList" class="align_left"></div>
+<div id="addition-container"></div>
+<div id="subtraction-container"></div>
+<div id="multiplication-container"></div>
+<div id="division-container"></div>
 
-<br>
-<br>
 
-      <!-- <form id="submit-question" action="#">
-        <h2>Submit a New Question</h2>
-        <input type="checkbox" name="addition" value="addition" id="checkbox1"> Addition
-        <input type="checkbox" name="subtraction" value="subtraction"> Subtraction
-        <input type="checkbox" name="multiplication" value="multiplication"> Multiplication
-        <input type="checkbox" name="division" value="division"> Division<br>
-        
-        <div class="input-field">
-          <input type="text" name="question" id="question">
-          <label for="question">Question</label>
-        </div>
-
-        <div class="input-field">
-          <input type="text" name="answer" id="answer">
-          <label for="answer">Answer</label>
-        </div>
-
-        <input type="submit" value="Create Question" class="btn">
-      </form>
-    </div> -->
 
 </body>
-
+    <script src="javascript/models/question.js"></script>
+    <script src="javascript/models/category.js"></script>
+    <script src="javascript/services/api.js"></script>
+    <script src="javascript/fancy.js"></script>
 </html>
