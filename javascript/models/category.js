@@ -15,6 +15,7 @@ class Category{
         categoryCard.dataset.id = this.id
         // categoryCard.innerHTML += this.categoryHTML()
         categoryContainer.appendChild(categoryCard)
+        
         document.getElementById(`${this.topic}`).addEventListener('click', e => {
             this.renderAdd(e)
         })
@@ -59,7 +60,6 @@ class Category{
         const subCard = document.createElement("div")
         subCard.dataset.id = this.id
         subCard.id = this.id
-        
         this.questions.forEach(element => {
             console.log(element)
         });
@@ -70,12 +70,10 @@ class Category{
       }
 
       renderMult(e){
-        // debugger
         const multiplicationContainer = document.getElementById('multiplication-container') 
         const multCard = document.createElement("div")
         multCard.dataset.id = this.id
         multCard.id = this.id
-        
         this.questions.forEach(element => {
             console.log(element)
         });
@@ -86,21 +84,15 @@ class Category{
       }
 
       renderDiv(e){
-        // debugger
         const divisionContainer = document.getElementById('division-container') 
         const diviCard = document.createElement("div")
         diviCard.dataset.id = this.id
         diviCard.id = this.id
-        
         this.questions.forEach(element => {
             console.log(element)
         });
-        // addCard.innerHTML += this.addHTML()
-        // additionContainer.appendChild(addCard)
         const el  = document.getElementById('answerList');
         el.remove();
       }
-
-
 
 }
