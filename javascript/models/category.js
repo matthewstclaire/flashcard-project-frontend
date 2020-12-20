@@ -48,8 +48,8 @@ class Category{
         this.questions.forEach(element => {
             console.log(element)
         });
-        // addCard.innerHTML += this.addHTML()
-        // additionContainer.appendChild(addCard)
+        addCard.innerHTML += this.addHTML()
+        additionContainer.appendChild(addCard)
         const el  = document.getElementById('answerList');
         el.remove();
       }
