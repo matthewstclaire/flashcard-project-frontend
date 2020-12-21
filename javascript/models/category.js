@@ -2,7 +2,13 @@ class Category{
     constructor(id, topic, questions){
         this.id = id;
         this.topic = topic;
-        this.questions = questions;
+        this.questions = questions.map(question => {
+            const id = question.id;
+            const body = question.body;
+            const answer = question.answer;
+            return new Question(id, body, answer)
+        })
+
         this.renderCategory()
     }
 
@@ -15,18 +21,12 @@ class Category{
         categoryCard.dataset.id = this.id
         // categoryCard.innerHTML += this.categoryHTML()
         categoryContainer.appendChild(categoryCard)
-        
+        // debugger
         document.getElementById(`${this.topic}`).addEventListener('click', e => {
-            this.renderAdd(e)
-        })
-        document.getElementById(`${this.topic}`).addEventListener('click', e => {
-            this.renderSub(e)
-        })
-        document.getElementById(`${this.topic}`).addEventListener('click', e => {
-            this.renderMult(e)
-        })
-        document.getElementById(`${this.topic}`).addEventListener('click', e => {
-            this.renderDivi(e)
+            if (this.topic==="Addition") {this.renderAdd(e)}
+            if (e.target.id==="sub") {this.renderSub(e)}
+            if (e.target.id==="mult") {this.renderMult(e)}
+            if (e.target.id==="divi") {this.renderDivi(e)}
         })
         // categoryContainer.addEventListener('click', e => {
         //     e.stopPropagation()
@@ -39,19 +39,20 @@ class Category{
       }
 
       renderAdd(e){
-        // debugger
+
+        const el  = document.getElementById('answerList');
         const additionContainer = document.getElementById('addition-container') 
         const addCard = document.createElement("div")
+        el.innerHTML = ''
+        debugger
         addCard.dataset.id = this.id
         addCard.id = this.id
-        
-        this.questions.forEach(element => {
-            console.log(element)
+        this.questions.forEach(element => { debugger
+            element.renderQuestion()
         });
-        addCard.innerHTML += this.addHTML()
-        additionContainer.appendChild(addCard)
-        const el  = document.getElementById('answerList');
-        el.remove();
+        // addCard.innerHTML += this.addHTML()
+        // additionContainer.appendChild(addCard)
+
       }
 
       renderSub(e){
