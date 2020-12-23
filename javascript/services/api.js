@@ -25,6 +25,22 @@ class API {
 
     static createQuestion(e){
         e.preventDefault()
+
+        const sel = document.getElementById('topic')
+        let opt = getSelectedOption(sel)
+        function getSelectedOption(sel) {
+        let opt;
+        for (let i=0, len = sel.options.length; i < len; i++ ){
+            opt =sel.options[i];
+            if ( opt.selected === true) {
+                break;
+                    }
+                }
+            return opt
+            }
+
+        debugger
+
         let data = {
             'topic': e.target.topic.value,
             'questions_attributes': [{
@@ -32,7 +48,7 @@ class API {
                 'answer': e.target.answer.value     
                 }]
         }  
-    fetch("http://localhost:3000/categories", {
+    fetch(`http://localhost:3000/categories/${opt.id}/questions`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'

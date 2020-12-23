@@ -24,9 +24,9 @@ class Category{
         // debugger
         document.getElementById(`${this.topic}`).addEventListener('click', e => {
             if (this.topic==="Addition") {this.renderAdd(e)}
-            if (e.target.id==="sub") {this.renderSub(e)}
-            if (e.target.id==="mult") {this.renderMult(e)}
-            if (e.target.id==="divi") {this.renderDivi(e)}
+            if (e.target.id==="Subtraction") {this.renderSub(e)}
+            if (e.target.id==="Multiplication") {this.renderMult(e)}
+            if (e.target.id==="Division") {this.renderDivi(e)}
         })
         // categoryContainer.addEventListener('click', e => {
         //     e.stopPropagation()
@@ -39,61 +39,47 @@ class Category{
       }
 
       renderAdd(e){
-
         const el  = document.getElementById('answerList');
-        const additionContainer = document.getElementById('addition-container') 
         const addCard = document.createElement("div")
         el.innerHTML = ''
-        debugger
         addCard.dataset.id = this.id
         addCard.id = this.id
-        this.questions.forEach(element => { debugger
+        this.questions.forEach(element => { 
             element.renderQuestion()
         });
-        // addCard.innerHTML += this.addHTML()
-        // additionContainer.appendChild(addCard)
-
       }
 
       renderSub(e){
-        // debugger
-        const subtractionContainer = document.getElementById('subtraction-container') 
-        const subCard = document.createElement("div")
-        subCard.dataset.id = this.id
-        subCard.id = this.id
-        this.questions.forEach(element => {
-            console.log(element)
-        });
-        // addCard.innerHTML += this.addHTML()
-        // additionContainer.appendChild(addCard)
         const el  = document.getElementById('answerList');
-        el.remove();
+        const addCard = document.createElement("div")
+        el.innerHTML = ''
+        addCard.dataset.id = this.id
+        addCard.id = this.id
+        this.questions.forEach(element => { 
+            element.renderQuestion()
+        });
       }
 
       renderMult(e){
-        const multiplicationContainer = document.getElementById('multiplication-container') 
-        const multCard = document.createElement("div")
-        multCard.dataset.id = this.id
-        multCard.id = this.id
-        this.questions.forEach(element => {
-            console.log(element)
-        });
-        // addCard.innerHTML += this.addHTML()
-        // additionContainer.appendChild(addCard)
         const el  = document.getElementById('answerList');
-        el.remove();
+        const addCard = document.createElement("div")
+        el.innerHTML = ''
+        addCard.dataset.id = this.id
+        addCard.id = this.id
+        this.questions.forEach(element => { 
+            element.renderQuestion()
+        });
       }
 
-      renderDiv(e){
-        const divisionContainer = document.getElementById('division-container') 
-        const diviCard = document.createElement("div")
-        diviCard.dataset.id = this.id
-        diviCard.id = this.id
-        this.questions.forEach(element => {
-            console.log(element)
-        });
+      renderDivi(e){
         const el  = document.getElementById('answerList');
-        el.remove();
+        const addCard = document.createElement("div")
+        el.innerHTML = ''
+        addCard.dataset.id = this.id
+        addCard.id = this.id
+        this.questions.forEach(element => { 
+            element.renderQuestion()
+        });
       }
 
 }
