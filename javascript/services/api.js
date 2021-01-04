@@ -25,7 +25,7 @@ class API {
 
     static createQuestion(e){
         e.preventDefault()
-
+    
         const sel = document.getElementById('topic')
         let opt = getSelectedOption(sel)
         function getSelectedOption(sel) {
@@ -39,16 +39,15 @@ class API {
             return opt
             }
 
-        debugger
-
         let data = {
             'topic': e.target.topic.value,
             'questions_attributes': [{
                 'body': e.target.body.value,
                 'answer': e.target.answer.value     
                 }]
-        }  
-    fetch(`http://localhost:3000/categories/${opt.id}/questions`, {
+        }
+        debugger  
+    fetch(`http://localhost:3000/categories/${opt.id}/questions/${id}`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
