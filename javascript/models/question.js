@@ -32,7 +32,7 @@ class Question{
 
     questionHTML(){
         return `
-        <div class = jumbotron>
+        <div class="jumbotron" id=${this.id}>
         <h11>${this.body}</h11>
         <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button-${this.id}">Answer</button>
         <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button" class="delete">Delete Question</button>
@@ -50,7 +50,8 @@ class Question{
 
     deleteQuestion(e){
         const id = parseInt(e.target.parentElement.id)
-        fetch(`http://localhost:3000/questions`,{ 
+
+        fetch(`http://localhost:3000/questions/${id}`,{ 
         method: 'DELETE'
             })
         .then(() => {

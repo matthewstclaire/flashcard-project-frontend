@@ -28,14 +28,6 @@ class Category{
             if (e.target.id==="Multiplication") {this.renderMult(e)}
             if (e.target.id==="Division") {this.renderDivi(e)}
         })
-        // categoryContainer.addEventListener('click', e => {
-        //     e.stopPropagation()
-        //     if (e.target.id==="add") {this.renderAdd(e)}
-        //     if (e.target.id==="sub") {this.renderSub(e)}
-        //     if (e.target.id==="mult") {this.renderMult(e)}
-        //     if (e.target.id==="divi") {this.renderDivi(e)}
-        //     console.log(this)
-        // })
       }
 
       renderAdd(e){

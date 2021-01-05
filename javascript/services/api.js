@@ -25,7 +25,6 @@ class API {
 
     static createQuestion(e){
         e.preventDefault()
-    
         const sel = document.getElementById('topic')
         let opt = getSelectedOption(sel)
         function getSelectedOption(sel) {
@@ -38,23 +37,21 @@ class API {
                 }
             return opt
             }
-
         let data = {
-            'topic': e.target.topic.value,
-            'questions_attributes': [{
                 'body': e.target.body.value,
                 'answer': e.target.answer.value     
-                }]
-        }
-        debugger  
-    fetch(`http://localhost:3000/categories/${opt.id}/questions/${id}`, {
+            }
+        
+    fetch(`http://localhost:3000/categories/${opt.id}/questions`, {
         method: 'POST',
         headers: {
         'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-        })
-    }
+            })
+        .then
+        }
+
     }
 
 //js conditional if e.target.checked === true
