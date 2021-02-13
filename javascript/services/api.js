@@ -49,14 +49,12 @@ class API {
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
-      //Then with the data from the response in JSON...
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      //Then with the error genereted...
-      .catch((error) => {
-        console.error("Error:", error);
+      .then((resp) => resp.json())
+      .then((question) => {
+        const { body, answer } = question;
+        new Question(body, answer);
+        document.getElementById("question").value = "";
+        document.getElementById("answer").value = "";
       });
   }
 }

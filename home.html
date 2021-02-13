@@ -6,19 +6,22 @@
     <title>Flashcards</title>
     <link rel="stylesheet" href="styles.css">
     
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-<body>
-    <div class="heading">
-        <h1>Flashcards</h1>
-        
-    </div>
-<br>
 
-<div class="center">
-<h2>Create a Question</h2>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<body>
+<img src="logo.png" class="logo" alt="Sweet Logo">
+
+<div class="dropdown">
+  <button class="dropbtn">Instructions</button>
+  <div class="dropdown-content">
+    <p>Hopefully this works really well!!</p>
+  </div>
 </div>
-<div id="questionForm" class="jumbotron">
+
+<div class="testParent">
+
+<div id="questionForm" class="childEl1">
+  <h2>Create a Question</h2>
     <form>
         <label for="newQuestion" name="topic" value="topic">Category</label>
         <select id="topic">
@@ -27,35 +30,32 @@
           <option value="Multiplication" id='3'>Multiplication</option>
           <option value="Division" id='4'>Division</option>
         </select>
-
         <div class="input-field">
             <label for="question">Question</label>
             <input type="text" name="body" id="question">
-            
           </div>
-  
           <div class="input-field">
             <label for="answer">Answer</label>
             <input type="text" name="answer" id="answer">
-            
           </div>
-  
-          <input type="submit" value="Submit Question">
+          <input type="submit" value="Submit Question" class='btn_cat'>
         </form>
     </div>
-
-    <h4><b>Choose a Category<b></h4>
+  
+<div class="childEl2">
+    <h2>Choose a Category</h2>
       <div id="category-container" class="container1">
-        <br>
-        <button type="button" id="Addition" class="btn btn-success">Addition</button>
-        <button type="button" id="Subtraction" class="btn btn-info">Subtraction</button>
-        <button type="button" id="Multiplication" class="btn btn-warning">Multiplication</button>
-        <button type="button" id="Division" class="btn btn-danger">Division</button>
-      </div><br>
+        <button type="button" id="Addition" class="btn_cat">Addition</button>
+        <button type="button" id="Subtraction" class="btn_cat">Subtraction</button>
+        <button type="button" id="Multiplication" class="btn_cat">Multiplication</button>
+        <button type="button" id="Division" class="btn_cat">Division</button>
+        <h2>Test Your Math Skills</h2>
+        <div id="answerList">
+
+      </div>
+    </div>
   </div>
-
-<div id="answerList" class="align_left"></div>
-
+</div>
 
 
 </body>

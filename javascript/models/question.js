@@ -36,18 +36,18 @@ class Question {
 
   questionHTML() {
     return `
-        <div class="jumbotron" id=${this.id}>
-        <h11>${this.body}</h11>
-        <button type ="button" class="btn btn-primary btn-lg" role="button" id="answer_button-${this.id}">Answer</button>
-        <button type ="button" class="btn btn-primary btn-lg" role="button" id="delete_button-${this.id}" class="delete">Delete Question</button>
+        <div class="answerAll" id=${this.id}>
+        <h1>${this.body}</h1>
+        <button type ="button" class="btn_cat" role="button" id="answer_button-${this.id}">Answer</button>
+        <button type ="button" class="btn_cat" role="button" id="delete_button-${this.id}" class="delete">Delete Question</button>
         <div id="placeholderAnswer${this.id}"></div>
         </div>
             `;
   }
 
   addAnswer(e) {
-    const node = document.createElement("H11");
-    const textnode = document.createTextNode(`${this.answer}`);
+    const node = document.createElement("H1");
+    const textnode = document.createTextNode(`Answer: ${this.answer}`);
     node.appendChild(textnode);
     document.getElementById(`placeholderAnswer${this.id}`).appendChild(node);
   }
@@ -58,9 +58,7 @@ class Question {
     question.remove();
     fetch(`http://localhost:3000/questions/${id}`, {
       method: "DELETE",
-    }).then(() => {
-      debugger;
-    });
+    }).then(() => {});
     // .then(() => {
     //   debugger;
     //   document
