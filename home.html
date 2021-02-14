@@ -11,16 +11,12 @@
 <body>
 <img src="logo.png" class="logo" alt="Sweet Logo">
 
-<div class="dropdown">
-  <button class="dropbtn">Instructions</button>
-  <div class="dropdown-content">
-    <p>Hopefully this works really well!!</p>
-  </div>
-</div>
+
 
 <div class="testParent">
 
 <div id="questionForm" class="childEl1">
+  
   <h2>Create a Question</h2>
     <form>
         <label for="newQuestion" name="topic" value="topic">Category</label>
@@ -32,14 +28,21 @@
         </select>
         <div class="input-field">
             <label for="question">Question</label>
-            <input type="text" name="body" id="question">
+            <input type="text" name="body" id="question" required>
           </div>
           <div class="input-field">
             <label for="answer">Answer</label>
-            <input type="text" name="answer" id="answer">
+            <input type="text" name="answer" id="answer" required>
           </div>
           <input type="submit" value="Submit Question" class='btn_cat'>
         </form>
+
+        <div class="dropdown">
+          <button class="dropbtn">Instructions</button>
+          <div class="dropdown-content">
+            <p>Using this simple app you can create your own problems that you're hoping to drill. All problems are saved in the database for later use. If you've mastered a problem then feel free to delete it! Have fun!</p>
+          </div>
+        </div>
     </div>
   
 <div class="childEl2">

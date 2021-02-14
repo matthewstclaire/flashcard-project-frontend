@@ -6,6 +6,10 @@ body {
   background-size: cover;
 }
 
+p {
+  font-size: 22px;
+}
+
 /* .mainTitle {
   display: flex;
   justify-content: center;
@@ -85,6 +89,7 @@ body {
 .dropdown {
   position: relative;
   display: inline-block;
+  display: block;
 }
 
 /* Dropdown Content (Hidden by Default) */
