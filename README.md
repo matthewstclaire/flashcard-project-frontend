@@ -1,24 +1,10 @@
-Front end for flashcards
+#Chalkboard Math Front End Repo
 
-// function loadFormListener(){
-//     const postForm = document.getElementById("submit-question");
-//     postForm.addEventListener("submit", function(){
-//     event.preventDefault()
-//     const postResults = getInfo(event)
-//     const htmlPost = postHtml(postResults)
-//     attachPost(htmlPost)
-//     clearForm()
-// })
+##Important Install Instructions
+**This repo is directly tied to it's Rails backend which can be found at: https://github.com/matthewstclaire/flashcard-project-backend.** Follow the guide on that repo to clone and run a server. Without this the Chalkboard Math App will not display any questions or have the ability to save questions made.
 
-// function getInfo(event){
-//     return {
-//         question: event.target.querySelector("#question").value,
-//         answer: event.target.querySelector("#answer").value
-//     }
-// }
-// }
+##About
+This app allows you to add basic math questions as you see fit. They are then stored in the backend which is a Rails API that I have made. You will also be able to delete questions as you see fit.
 
-// const clearForm = () => {
-//     document.getElementById("question").value = ""
-//     document.getElementById("answer").value = ""
-// }
+##License
+This database is available as open source under the terms of the MIT License.

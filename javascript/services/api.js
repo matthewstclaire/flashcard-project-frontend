@@ -1,6 +1,6 @@
 class API {
   static findCategories() {
-    fetch("http://localhost:3000/categories")
+    fetch('http://localhost:3000/categories')
       .then((resp) => resp.json())
       .then((categories) => {
         categories.forEach((category) => {
@@ -11,7 +11,7 @@ class API {
   }
 
   static addQuestions() {
-    fetch("http://localhost:3000/questions")
+    fetch('http://localhost:3000/questions')
       .then((resp) => resp.json())
       .then((questions) => {
         questions.forEach((question) => {
@@ -25,7 +25,7 @@ class API {
 
   static createQuestion(e) {
     e.preventDefault();
-    const sel = document.getElementById("topic");
+    const sel = document.getElementById('topic');
     let opt = getSelectedOption(sel);
     function getSelectedOption(sel) {
       let opt;
@@ -41,11 +41,10 @@ class API {
       body: e.target.body.value,
       answer: e.target.answer.value,
     };
-
     fetch(`http://localhost:3000/categories/${opt.id}/questions`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     })
@@ -53,8 +52,8 @@ class API {
       .then((question) => {
         const { body, answer } = question;
         new Question(body, answer);
-        document.getElementById("question").value = "";
-        document.getElementById("answer").value = "";
+        document.getElementById('question').value = '';
+        document.getElementById('answer').value = '';
       });
   }
 }
