@@ -18,7 +18,8 @@ class API {
           const id = question.id;
           const body = question.body;
           const answer = question.answer;
-          new Question(id, body, answer);
+          const categoryId = question.category_id;
+          new Question(id, body, answer, categoryId);
         });
       });
   }
@@ -55,9 +56,25 @@ class API {
         document.getElementById('question').value = '';
         document.getElementById('answer').value = '';
       });
+
+    const catId = opt.id - 1;
+    const questionArray = Category.all[catId].questions;
+    questionArray.unshift(newQuestion);
   }
 }
 
-//js conditional if e.target.checked === true
-//let category = addition
-//strong params in category for body answer
+// deleteQuestion(e) {
+//   const question = e.target.parentElement;
+//   const id = parseInt(e.target.parentElement.id);
+//   const catId = parseInt(question.dataset.categoryid) - 1;
+//   const catArray = Category.all;
+//   const category = catArray[catId];
+//   // debugger;
+//   question.remove();
+//   fetch(`http://localhost:3000/questions/${id}`, {
+//     method: 'DELETE',
+//   }).then(() => {});
+//   const deleteQuestion = catArray[catId].questions.find((e) => e.id === id);
+//   const i = category.questions.indexOf(deleteQuestion);
+//   category.questions.splice(i, 1);
+// }

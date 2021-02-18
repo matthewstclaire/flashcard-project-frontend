@@ -1,9 +1,9 @@
 class Question {
-  constructor(id, body, answer) {
-    // this.category_id = categoryId;
+  constructor(id, body, answer, categoryId) {
     this.id = id;
     this.body = body;
     this.answer = answer;
+    this.categoryId = categoryId;
     this.renderQuestion();
   }
 
@@ -37,7 +37,7 @@ class Question {
 
   questionHTML() {
     return `
-        <div class="answerAll" id=${this.id}>
+        <div class="answerAll" id=${this.id} data-categoryId=${this.categoryId}>
         <h1>${this.body}</h1>
         <button type ="button" class="btn_cat" role="button" id="answer_button-${this.id}">Answer</button>
         <button type ="button" class="btn_cat" role="button" id="delete_button-${this.id}" class="delete">Delete Question</button>
@@ -56,18 +56,16 @@ class Question {
   deleteQuestion(e) {
     const question = e.target.parentElement;
     const id = parseInt(e.target.parentElement.id);
+    const catId = parseInt(question.dataset.categoryid) - 1;
     const catArray = Category.all;
-    debugger;
-    // const catId = catArray.find
+    const category = catArray[catId];
+    // debugger;
     question.remove();
     fetch(`http://localhost:3000/questions/${id}`, {
       method: 'DELETE',
-    }).then(() => {
-      // .then(() => {
-      //   debugger;
-      //   document.getElementById("answerList").removeChild(document.getElementById(id));
-      // });
-      // id.parentNode.removeChild(id);
-    });
+    }).then(() => {});
+    const deleteQuestion = catArray[catId].questions.find((e) => e.id === id);
+    const i = category.questions.indexOf(deleteQuestion);
+    category.questions.splice(i, 1);
   }
 }

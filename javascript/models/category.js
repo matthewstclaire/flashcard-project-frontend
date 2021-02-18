@@ -7,7 +7,8 @@ class Category {
       const id = question.id;
       const body = question.body;
       const answer = question.answer;
-      return new Question(id, body, answer);
+      const categoryId = question.category_id;
+      return new Question(id, body, answer, categoryId);
     });
     Category.all.push(this);
     this.renderCategory();
