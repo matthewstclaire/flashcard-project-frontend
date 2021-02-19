@@ -29,10 +29,6 @@ class Question {
       .addEventListener('click', (e) => {
         this.deleteQuestion(e);
       });
-    // questionContainer.addEventListener('click', (e) => {
-    //     if (e.target.id==="answer_button") this.addAnswer(e)
-    //     if (e.target.id==="delete_button") this.deleteQuestion(e)
-    //     });
   }
 
   questionHTML() {

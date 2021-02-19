@@ -45,6 +45,7 @@ class Category {
     el.innerHTML = '';
     addCard.dataset.id = this.id;
     addCard.id = this.id;
+    // debugger;
     this.questions.forEach((element) => {
       element.renderQuestion();
     });

@@ -28,6 +28,8 @@ class API {
     e.preventDefault();
     const sel = document.getElementById('topic');
     let opt = getSelectedOption(sel);
+    const catId = opt.id - 1;
+    const questionArray = Category.all[catId].questions;
     function getSelectedOption(sel) {
       let opt;
       for (let i = 0, len = sel.options.length; i < len; i++) {
@@ -52,29 +54,11 @@ class API {
       .then((resp) => resp.json())
       .then((question) => {
         const { body, answer } = question;
-        new Question(body, answer);
+        const newQuestion = new Question(body, answer);
         document.getElementById('question').value = '';
         document.getElementById('answer').value = '';
+        questionArray.unshift(newQuestion);
       });
-
-    const catId = opt.id - 1;
-    const questionArray = Category.all[catId].questions;
-    questionArray.unshift(newQuestion);
+    debugger;
   }
 }
-
-// deleteQuestion(e) {
-//   const question = e.target.parentElement;
-//   const id = parseInt(e.target.parentElement.id);
-//   const catId = parseInt(question.dataset.categoryid) - 1;
-//   const catArray = Category.all;
-//   const category = catArray[catId];
-//   // debugger;
-//   question.remove();
-//   fetch(`http://localhost:3000/questions/${id}`, {
-//     method: 'DELETE',
-//   }).then(() => {});
-//   const deleteQuestion = catArray[catId].questions.find((e) => e.id === id);
-//   const i = category.questions.indexOf(deleteQuestion);
-//   category.questions.splice(i, 1);
-// }
