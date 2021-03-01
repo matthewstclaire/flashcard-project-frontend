@@ -60,6 +60,7 @@ class Question {
     fetch(`http://localhost:3000/questions/${id}`, {
       method: 'DELETE',
     }).then(() => {});
+
     const deleteQuestion = catArray[catId].questions.find((e) => e.id === id);
     const i = category.questions.indexOf(deleteQuestion);
     category.questions.splice(i, 1);

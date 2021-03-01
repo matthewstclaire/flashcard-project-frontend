@@ -10,19 +10,43 @@ class API {
       });
   }
 
-  static addQuestions() {
-    fetch('http://localhost:3000/questions')
-      .then((resp) => resp.json())
-      .then((questions) => {
-        questions.forEach((question) => {
-          const id = question.id;
-          const body = question.body;
-          const answer = question.answer;
-          const categoryId = question.category_id;
-          new Question(id, body, answer, categoryId);
-        });
-      });
+  sortQuestions(a, b) {
+    const questA = a.body;
+    const questB = b.body;
+    if (questA < questB) {
+      return -1;
+    } else if (questA > questB) {
+      return 1;
+    } else {
+      return 0;
+    }
   }
+  // static addQuestions() {
+  //   fetch('http://localhost:3000/questions')
+  //     .then((resp) => resp.json())
+  //     .then((questions) =>
+  //       questions.sort(function (a, b) {
+  //         const questA = a.body;
+  //         const questB = b.body;
+  //         if (questA < questB) {
+  //           return -1;
+  //         } else if (questA > questB) {
+  //           return 1;
+  //         } else {
+  //           return 0;
+  //         }
+  //       })
+  //     );
+  // .then((sorted) => {
+  //   sorted.forEach((question) => {
+  //     const id = question.id;
+  //     const body = question.body;
+  //     const answer = question.answer;
+  //     const categoryId = question.category_id;
+  //     new Question(id, body, answer, categoryId);
+  //   });
+  // });
+  //}
 
   static createQuestion(e) {
     e.preventDefault();
@@ -53,12 +77,11 @@ class API {
     })
       .then((resp) => resp.json())
       .then((question) => {
-        const { body, answer } = question;
-        const newQuestion = new Question(body, answer);
+        const { id, body, answer, categoryId } = question;
+        const newQuestion = new Question(id, body, answer, categoryId);
         document.getElementById('question').value = '';
         document.getElementById('answer').value = '';
         questionArray.unshift(newQuestion);
       });
-    debugger;
   }
 }

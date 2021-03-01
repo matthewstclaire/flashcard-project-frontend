@@ -1,5 +1,5 @@
 body {
-  font-family: "Shadows Into Light", cursive;
+  font-family: 'Shadows Into Light', cursive;
   background-color: rgba(0, 0, 0, 0.899);
   color: white;
   background-image: linear-gradient(rgb(130, 117, 216), #00c4cc);
@@ -26,7 +26,7 @@ p {
 } */
 
 .btn_cat {
-  font-family: "Shadows Into Light", cursive;
+  font-family: 'Shadows Into Light', cursive;
   color: #000000;
   padding: 0.3em 1.2em;
   margin: 0 0.3em 0.3em 0;
@@ -117,4 +117,9 @@ p {
 
 .dropdown:hover .dropbtn {
   background-color: #00c4cc;
+}
+
+.btn_cat:focus,
+.input-field:focus {
+  outline: none;
 }
